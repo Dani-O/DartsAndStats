@@ -26,7 +26,7 @@ class SelectionMenu extends StatelessWidget {
         children: <Widget>[
           MenuItem("Dashboard", true),
           MenuItem("Play Game", false),
-          MenuItem("HistorY", false),
+          MenuItem("History", false),
           MenuItem("Player", false),
         ],
       ),
