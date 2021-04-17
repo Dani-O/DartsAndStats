@@ -24,7 +24,7 @@ class SelectionMenu extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          MenuItem("Dashboard", true),
+          MenuItem("DashboarD", true),
           MenuItem("Play Game", false),
           MenuItem("History", false),
           MenuItem("Player", false),
