@@ -30,12 +30,10 @@ class PerfomanceTabletPotrait extends StatelessWidget {
                   child: PerfomanceTitle(
                       edgeInsets: EdgeInsets.only(left: 40, top: 20),
                       fontsize: 20)),
-              //   Spacer(flex: 2),
               Expanded(
                 flex: 8,
                 child: Row(
                   children: [
-                    //  Spacer(flex: 2),
                     Expanded(
                         flex: 2,
                         child: Container(
@@ -48,21 +46,31 @@ class PerfomanceTabletPotrait extends StatelessWidget {
                                 sizeboxHeight: 10,
                                 descriptionFontsize: 15))),
                     SizedBox(width: 60),
-                    // Spacer(flex: 1),
                     Expanded(
                       flex: 2,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          DetailedVarianceHorizontal("2.7", 30, 25,
-                              "vertical \nvariance in cm", 12, 60, 3),
+                          DetailedVarianceHorizontal(
+                              value: "2.7",
+                              valueFontsize: 30,
+                              sizeboxWidth: 25,
+                              description: "vertical \nvariance in cm",
+                              descriptionFontsize: 12,
+                              containerWidth: 60,
+                              containerBorderWidth: 3),
                           SizedBox(height: 30),
-                          DetailedVarianceHorizontal("3.7", 30, 25,
-                              "horizontal \nvariance in cm", 12, 60, 3),
+                          DetailedVarianceHorizontal(
+                              value: "3.7",
+                              valueFontsize: 30,
+                              sizeboxWidth: 25,
+                              description: "horizontal \nvariance in cm",
+                              descriptionFontsize: 12,
+                              containerWidth: 60,
+                              containerBorderWidth: 3),
                         ],
                       ),
                     ),
-                    //Spacer(flex: 2),
                   ],
                 ),
               ),

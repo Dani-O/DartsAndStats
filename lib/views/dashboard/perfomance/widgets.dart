@@ -148,13 +148,13 @@ class DetailedVarianceHorizontal extends StatelessWidget {
   final double containerBorderWidth;
 
   const DetailedVarianceHorizontal(
-      this.value,
+      {this.value,
       this.valueFontsize,
       this.sizeboxWidth,
       this.description,
       this.descriptionFontsize,
       this.containerWidth,
-      this.containerBorderWidth);
+      this.containerBorderWidth});
 
   @override
   Widget build(BuildContext context) {
