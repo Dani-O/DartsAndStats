@@ -1,7 +1,7 @@
 import 'package:dartapp/views/dashboard/perfomance/performance.dart';
 import 'package:dartapp/views/dashboard/progress/progress.dart';
 import 'package:dartapp/views/dashboard/statistics/statistics.dart';
-import 'package:dartapp/widgets/menubar/menubar.dart';
+import 'package:dartapp/widgets/menubar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
