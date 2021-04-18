@@ -1,4 +1,4 @@
-import 'package:dartapp/views/dashboard/perfomance/Widgets.dart';
+import 'widgets.dart';
 import 'package:flutter/material.dart';
 
 class PerfomanceTabletPotrait extends StatelessWidget {
@@ -27,8 +27,9 @@ class PerfomanceTabletPotrait extends StatelessWidget {
             children: [
               Expanded(
                   flex: 2,
-                  child:
-                      PerfomanceTitle(EdgeInsets.only(left: 40, top: 20), 20)),
+                  child: PerfomanceTitle(
+                      edgeInsets: EdgeInsets.only(left: 40, top: 20),
+                      fontsize: 20)),
               //   Spacer(flex: 2),
               Expanded(
                 flex: 8,
@@ -39,8 +40,13 @@ class PerfomanceTabletPotrait extends StatelessWidget {
                         flex: 2,
                         child: Container(
                             alignment: Alignment.centerRight,
-                            child:
-                                VarianceInCmCircle(200, 3, "3.2", 40, 10, 15))),
+                            child: VarianceInCmCircle(
+                                containerWidth: 200,
+                                borderWidth: 3,
+                                varianceValue: "3.2",
+                                valueFontsize: 40,
+                                sizeboxHeight: 10,
+                                descriptionFontsize: 15))),
                     SizedBox(width: 60),
                     // Spacer(flex: 1),
                     Expanded(
@@ -93,21 +99,40 @@ class PerfomanceTabletLandscape extends StatelessWidget {
                 Expanded(
                     flex: 2,
                     child: PerfomanceTitle(
-                        EdgeInsets.only(left: 30, top: 25), 20)),
+                        edgeInsets: EdgeInsets.only(left: 30, top: 25),
+                        fontsize: 20)),
                 Spacer(flex: 1),
                 Expanded(
                     flex: 5,
-                    child: VarianceInCmCircle(300, 3, "3.2", 40, 10, 15)),
+                    child: VarianceInCmCircle(
+                        containerWidth: 200,
+                        borderWidth: 3,
+                        varianceValue: "3.2",
+                        valueFontsize: 40,
+                        sizeboxHeight: 10,
+                        descriptionFontsize: 15)),
                 Spacer(flex: 1),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(width: 0),
                     DetailedVariance(
-                        "2.7", 25, 17, "vertical \nvariance in cm", 12, 80, 3),
+                        value: "2.7",
+                        valueFontsize: 25,
+                        sizeboxHeight: 17,
+                        description: "vertical \nvariance in cm",
+                        descriptionFontsize: 12,
+                        containerWidth: 80,
+                        containerBorderWidth: 3),
                     SizedBox(width: 30),
-                    DetailedVariance("3.7", 25, 17,
-                        "horizontal \nvariance in cm", 12, 80, 3),
+                    DetailedVariance(
+                        value: "3.7",
+                        valueFontsize: 25,
+                        sizeboxHeight: 17,
+                        description: "horizontal \nvariance in cm",
+                        descriptionFontsize: 12,
+                        containerWidth: 80,
+                        containerBorderWidth: 3)
                   ],
                 ),
                 Spacer(flex: 2),

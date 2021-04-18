@@ -33,10 +33,33 @@ class StatisticsDesktop extends StatelessWidget {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        TextStats(2, 120, 40, 40, 40, 40, 20, 16, 22),
+                        TextStats(
+                            flex: 2,
+                            containerWidth: 120,
+                            paddingLeft: 40,
+                            paddingLeftTwo: 40,
+                            paddingRight: 40,
+                            paddingTop: 40,
+                            paddingTopTwo: 20,
+                            textFontsize: 16,
+                            valueFontsize: 22),
                         CircleProgressIndicators(
-                            3, 200, 140, 140, 20, 20, 70, 45),
-                        VerticalProgressIndicators(3, 40, 140, 15, 5, 240, 10),
+                            flex: 3,
+                            containerHeight: 200,
+                            indicatorHeight: 140,
+                            indicatorWidth: 140,
+                            valueFontsize: 20,
+                            textFontsize: 16,
+                            valueBottom: 70,
+                            textBottom: 45),
+                        VerticalProgressIndicators(
+                            flex: 3,
+                            paddingRight: 40,
+                            mainContainerHeight: 140,
+                            textFontsize: 15,
+                            containerHeight: 5,
+                            containerWidth: 240,
+                            horizontalMargin: 10),
                       ])),
             ])));
   }

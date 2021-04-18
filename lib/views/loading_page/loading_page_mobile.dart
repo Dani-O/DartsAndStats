@@ -1,6 +1,5 @@
 import 'package:dartapp/views/dashboard/dashboard.dart';
 import 'package:dartapp/widgets/logo.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoadingPageMobile extends StatelessWidget {

@@ -47,10 +47,33 @@ class StatisticsTabletLandscape extends StatelessWidget {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        TextStats(2, 120, 25, 25, 30, 40, 16, 12, 18),
+                        TextStats(
+                            flex: 2,
+                            containerWidth: 120,
+                            paddingLeft: 25,
+                            paddingLeftTwo: 25,
+                            paddingRight: 30,
+                            paddingTop: 30,
+                            paddingTopTwo: 16,
+                            textFontsize: 12,
+                            valueFontsize: 18),
                         CircleProgressIndicators(
-                            3, 160, 100, 100, 20, 20, 50, 25),
-                        VerticalProgressIndicators(3, 25, 140, 15, 5, 200, 10),
+                            flex: 3,
+                            containerHeight: 160,
+                            indicatorHeight: 100,
+                            indicatorWidth: 100,
+                            valueFontsize: 20,
+                            textFontsize: 20,
+                            valueBottom: 50,
+                            textBottom: 25),
+                        VerticalProgressIndicators(
+                            flex: 3,
+                            paddingRight: 25,
+                            mainContainerHeight: 140,
+                            textFontsize: 15,
+                            containerHeight: 5,
+                            containerWidth: 200,
+                            horizontalMargin: 10),
                       ])),
             ])));
   }

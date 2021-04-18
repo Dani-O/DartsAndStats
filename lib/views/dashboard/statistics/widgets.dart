@@ -13,7 +13,7 @@ class TextStats extends StatelessWidget {
   final double paddingTop;
 
   const TextStats(
-      this.flex,
+      {this.flex,
       this.containerWidth,
       this.paddingLeft,
       this.paddingLeftTwo,
@@ -21,7 +21,7 @@ class TextStats extends StatelessWidget {
       this.paddingTop,
       this.paddingTopTwo,
       this.textFontsize,
-      this.valueFontsize);
+      this.valueFontsize});
 
   @override
   Widget build(BuildContext context) {
@@ -126,14 +126,14 @@ class CircleProgressIndicators extends StatelessWidget {
   final double textBottom;
 
   const CircleProgressIndicators(
-      this.flex,
+      {this.flex,
       this.containerHeight,
       this.indicatorHeight,
       this.indicatorWidth,
       this.valueFontsize,
       this.textFontsize,
       this.valueBottom,
-      this.textBottom);
+      this.textBottom});
 
   @override
   Widget build(BuildContext context) {
@@ -244,16 +244,16 @@ class VerticalProgressIndicators extends StatelessWidget {
   final double mainContainerHeight;
   final double textFontsize;
   final double containerHeight;
-  final double containerwidth;
+  final double containerWidth;
   final double horizontalMargin;
   const VerticalProgressIndicators(
-      this.flex,
+      {this.flex,
       this.paddingRight,
       this.mainContainerHeight,
       this.textFontsize,
       this.containerHeight,
-      this.containerwidth,
-      this.horizontalMargin);
+      this.containerWidth,
+      this.horizontalMargin});
 
   @override
   Widget build(BuildContext context) {
@@ -267,13 +267,13 @@ class VerticalProgressIndicators extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 LinearIndicatorRow("first 9", 0.6, "60.2", textFontsize,
-                    containerHeight, containerwidth, horizontalMargin),
+                    containerHeight, containerWidth, horizontalMargin),
                 LinearIndicatorRow("first 12", 0.45, "45.9", textFontsize,
-                    containerHeight, containerwidth, horizontalMargin),
+                    containerHeight, containerWidth, horizontalMargin),
                 LinearIndicatorRow("first 15", 0.4, "40.2", textFontsize,
-                    containerHeight, containerwidth, horizontalMargin),
+                    containerHeight, containerWidth, horizontalMargin),
                 LinearIndicatorRow("3d avg", 0.46, "45.7", textFontsize,
-                    containerHeight, containerwidth, horizontalMargin),
+                    containerHeight, containerWidth, horizontalMargin),
               ],
             )));
   }
@@ -285,7 +285,7 @@ class LinearIndicatorRow extends StatelessWidget {
   final String value;
   final double textFontsize;
   final double containerHeight;
-  final double containerwidth;
+  final double containerWidth;
   final double horizontalMargin;
   const LinearIndicatorRow(
       this.descriptionValue,
@@ -293,7 +293,7 @@ class LinearIndicatorRow extends StatelessWidget {
       this.value,
       this.textFontsize,
       this.containerHeight,
-      this.containerwidth,
+      this.containerWidth,
       this.horizontalMargin);
 
   @override
@@ -317,7 +317,7 @@ class LinearIndicatorRow extends StatelessWidget {
         ),
         Container(
             margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
-            width: containerwidth,
+            width: containerWidth,
             height: containerHeight,
             child: LinearProgressIndicator(
                 backgroundColor:

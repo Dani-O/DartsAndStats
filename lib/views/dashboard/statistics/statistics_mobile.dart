@@ -8,7 +8,7 @@ class StatisticsMobile extends StatelessWidget {
         padding: EdgeInsets.only(right: 10, left: 10),
         child: Container(
             width: double.infinity,
-            height: 750,
+            height: 700,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(
@@ -17,7 +17,7 @@ class StatisticsMobile extends StatelessWidget {
             ),
             child: Column(children: [
               Container(
-                  height: 20,
+                  height: 30,
                   alignment: Alignment.topLeft,
                   margin: EdgeInsets.only(left: 40, top: 25, bottom: 0),
                   child: Text(
@@ -30,16 +30,40 @@ class StatisticsMobile extends StatelessWidget {
                         decoration: TextDecoration.none),
                   )),
               Expanded(
-                  flex: 9,
+                  flex: 8,
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        TextStats(2, 120, 40, 25, 30, 40, 16, 16, 25),
+                        TextStats(
+                            flex: 2,
+                            containerWidth: 120,
+                            paddingLeft: 40,
+                            paddingLeftTwo: 25,
+                            paddingRight: 30,
+                            paddingTop: 40,
+                            paddingTopTwo: 16,
+                            textFontsize: 16,
+                            valueFontsize: 25),
                         SizedBox(height: 20),
-                        VerticalProgressIndicators(2, 0, 140, 15, 5, 200, 10),
+                        VerticalProgressIndicators(
+                            flex: 2,
+                            paddingRight: 0,
+                            mainContainerHeight: 140,
+                            textFontsize: 15,
+                            containerHeight: 5,
+                            containerWidth: 240,
+                            horizontalMargin: 10),
                         SizedBox(height: 10),
                         CircleProgressIndicators(
-                            2, 120, 100, 100, 20, 20, 50, 25),
+                          flex: 2,
+                          containerHeight: 120,
+                          indicatorHeight: 110,
+                          indicatorWidth: 110,
+                          textFontsize: 20,
+                          valueFontsize: 20,
+                          valueBottom: 55,
+                          textBottom: 30,
+                        ),
                       ])),
             ])));
   }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class PerfomanceTitle extends StatelessWidget {
   final EdgeInsets edgeInsets;
   final double fontsize;
-  const PerfomanceTitle(this.edgeInsets, this.fontsize);
+  const PerfomanceTitle({this.edgeInsets, this.fontsize});
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +34,12 @@ class VarianceInCmCircle extends StatelessWidget {
   final double valueFontsize;
   final double descriptionFontsize;
   const VarianceInCmCircle(
-      this.containerWidth,
+      {this.containerWidth,
       this.borderWidth,
       this.varianceValue,
       this.valueFontsize,
       this.sizeboxHeight,
-      this.descriptionFontsize);
+      this.descriptionFontsize});
 
   @override
   Widget build(BuildContext context) {
@@ -89,13 +89,13 @@ class DetailedVariance extends StatelessWidget {
   final double containerBorderWidth;
 
   const DetailedVariance(
-      this.value,
+      {this.value,
       this.valueFontsize,
       this.sizeboxHeight,
       this.description,
       this.descriptionFontsize,
       this.containerWidth,
-      this.containerBorderWidth);
+      this.containerBorderWidth});
 
   @override
   Widget build(BuildContext context) {
