@@ -11,7 +11,6 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     debugPaintSizeEnabled = false;
-
     return ScreenTypeLayout(
       mobile: DashboardMobile(),
       tablet: DashboardTabletLandscape(),

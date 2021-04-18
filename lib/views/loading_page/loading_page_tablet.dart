@@ -7,7 +7,6 @@ class LoadingPageTabletPortrait extends StatelessWidget {
   Widget build(BuildContext context) {
     debugPrint("Tablet Potrait");
     return Stack(
-      // mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
           color: Color.fromRGBO(255, 255, 255, 1),
