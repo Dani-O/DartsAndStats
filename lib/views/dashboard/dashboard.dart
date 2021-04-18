@@ -10,7 +10,7 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPaintSizeEnabled = true;
+    debugPaintSizeEnabled = false;
 
     return ScreenTypeLayout(
       mobile: DashboardMobile(),
