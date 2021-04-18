@@ -15,12 +15,12 @@ class LoadingPageMobile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
-                child: LogoCircle(80, 80, 40),
+                child: LogoCircle(logoHeight: 80, logoWidth: 80, fontsize: 40),
                 alignment: Alignment(0.9, 0),
                 padding: EdgeInsets.symmetric(horizontal: 20),
               ),
               Container(
-                child: LogoText(30),
+                child: LogoText(fontsize: 30),
                 alignment: Alignment(-0.9, 0),
               ),
             ],

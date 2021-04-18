@@ -11,11 +11,7 @@ class Perfomance extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
       mobile: PerfomanceMobile(),
-      tablet: OrientationLayoutBuilder(portrait: (context) {
-        return PerfomanceTabletPotrait();
-      }, landscape: (context) {
-        return PerfomanceTabletLandscape();
-      }),
+      tablet: PerfomanceTabletLandscape(),
       desktop: PerfomanceDesktop(),
     );
   }

@@ -1,5 +1,7 @@
+/*
+import 'package:dartapp/widgets/logo.dart';
 import 'package:flutter/material.dart';
-import '../logo.dart';
+
 
 class TopbarMobile extends StatelessWidget {
   const TopbarMobile();
@@ -7,7 +9,7 @@ class TopbarMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: EdgeInsets.only(top: 5),
-        height: 80,
+        height: 50,
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Logo(),
@@ -28,9 +30,9 @@ class Logo extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Container(
-            height: 50,
-            width: 50,
-            child: LogoCircle(100, 100, 20),
+            height: 40,
+            width: 40,
+            child: LogoCircle(50, 50, 16),
           ),
 
           // Spacer(flex: 3),
@@ -38,7 +40,7 @@ class Logo extends StatelessWidget {
             padding: EdgeInsets.only(left: 10),
             //   flex: 21,
             width: 80,
-            child: LogoText(15),
+            child: LogoText(12),
             alignment: Alignment.centerLeft,
           ),
         ],
@@ -56,8 +58,8 @@ class Profilpicture extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 30),
-      height: 60,
-      width: 60,
+      height: 50,
+      width: 50,
       decoration: new BoxDecoration(
         border: Border.all(width: 2, color: Color.fromARGB(255, 105, 150, 158)),
         shape: BoxShape.circle,
@@ -75,3 +77,4 @@ class Profilpicture extends StatelessWidget {
     );
   }
 }
+*/

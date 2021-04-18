@@ -15,12 +15,13 @@ class LoadingPageDesktop extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
-                child: LogoCircle(160, 160, 80),
+                child:
+                    LogoCircle(logoHeight: 160, logoWidth: 160, fontsize: 80),
                 alignment: Alignment(0.9, 0),
                 padding: EdgeInsets.symmetric(horizontal: 50),
               ),
               Container(
-                child: LogoText(60),
+                child: LogoText(fontsize: 60),
                 alignment: Alignment(-0.9, 0),
               ),
             ],

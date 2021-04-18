@@ -11,11 +11,7 @@ class Progress extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
       mobile: ProgressMobile(),
-      tablet: OrientationLayoutBuilder(portrait: (context) {
-        return ProgressTabletPotrait();
-      }, landscape: (context) {
-        return ProgressTabletLandscape();
-      }),
+      tablet: ProgressTabletLandscape(),
       desktop: ProgressDesktop(),
     );
   }

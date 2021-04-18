@@ -11,11 +11,7 @@ class Statistics extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
       mobile: StatisticsMobile(),
-      tablet: OrientationLayoutBuilder(portrait: (context) {
-        return StatisticsTabletPotrait();
-      }, landscape: (context) {
-        return StatisticsTabletLandscape();
-      }),
+      tablet: StatisticsTabletLandscape(),
       desktop: StatisticsDesktop(),
     );
   }

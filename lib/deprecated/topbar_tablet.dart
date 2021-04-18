@@ -1,5 +1,6 @@
+/*
 import 'package:flutter/material.dart';
-import '../logo.dart';
+import '../widgets/logo.dart';
 
 class TopbarTablet extends StatelessWidget {
   const TopbarTablet();
@@ -75,3 +76,4 @@ class Profilpicture extends StatelessWidget {
     );
   }
 }
+*/

@@ -1,20 +1,6 @@
 import 'package:dartapp/views/dashboard/statistics/widgets.dart';
 import 'package:flutter/material.dart';
 
-class StatisticsTabletPotrait extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.only(left: 20, right: 20),
-        child: ClipRRect(
-            borderRadius: BorderRadius.circular(22.0),
-            child: Container(
-              height: 400,
-              color: Color.fromARGB(255, 105, 150, 158),
-            )));
-  }
-}
-
 class StatisticsTabletLandscape extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
