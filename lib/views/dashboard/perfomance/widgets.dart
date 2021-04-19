@@ -45,6 +45,7 @@ class VarianceInCmCircle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: containerWidth,
+        height: 200,
         decoration: BoxDecoration(
             border: Border.all(
               color: Colors.white,

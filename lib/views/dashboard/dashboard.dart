@@ -10,12 +10,16 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPaintSizeEnabled = false;
-
     return ScreenTypeLayout(
       mobile: DashboardMobile(),
-      tablet: DashboardTabletLandscape(),
-      desktop: DashboardDesktop(),
+      tablet: RefinedLayoutBuilder(
+        small: (context) => DashboardMobile(),
+        normal: (context) => DashboardTabletLandscape(),
+      ),
+      desktop: RefinedLayoutBuilder(
+          small: (context) => DashboardMobile(),
+          normal: (context) => DashboardTabletLandscape(),
+          large: (context) => DashboardDesktop()),
     );
   }
 }

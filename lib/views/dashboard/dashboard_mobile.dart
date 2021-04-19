@@ -1,5 +1,8 @@
+import 'package:dartapp/views/dashboard/perfomance/perfomance_mobile.dart';
 import 'package:dartapp/views/dashboard/perfomance/performance.dart';
+import 'package:dartapp/views/dashboard/progress/progress_mobile.dart';
 import 'package:dartapp/views/dashboard/statistics/statistics.dart';
+import 'package:dartapp/views/dashboard/statistics/statistics_mobile.dart';
 import 'package:dartapp/widgets/topbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -8,7 +11,7 @@ import 'progress/progress.dart';
 class DashboardMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    debugPaintSizeEnabled = false;
+    debugPrint("Dashboard Mobile");
     return SafeArea(
         child: Scaffold(
       backgroundColor: Colors.white,
@@ -22,11 +25,11 @@ class DashboardMobile extends StatelessWidget {
             flex: 80,
             child: ListView(
               children: [
-                Progress(),
+                ProgressMobile(),
                 SizedBox(height: 20),
-                Perfomance(),
+                PerfomanceMobile(),
                 SizedBox(height: 20),
-                Statistics(),
+                StatisticsMobile(),
               ],
             ),
           ),

@@ -10,9 +10,11 @@ class Statistics extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: StatisticsMobile(),
-      tablet: StatisticsTabletLandscape(),
-      desktop: StatisticsDesktop(),
-    );
+        mobile: StatisticsMobile(),
+        tablet: StatisticsTabletLandscape(),
+        desktop: RefinedLayoutBuilder(
+            small: (context) => StatisticsMobile(),
+            normal: (context) => StatisticsTabletLandscape(),
+            large: (context) => StatisticsDesktop()));
   }
 }

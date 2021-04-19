@@ -9,8 +9,6 @@ class MenuBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPaintSizeEnabled = true;
-
     return ScreenTypeLayout(
       mobile: MenuBarTablet(),
       tablet: MenuBarTablet(),

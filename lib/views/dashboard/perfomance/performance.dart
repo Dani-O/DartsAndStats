@@ -12,7 +12,10 @@ class Perfomance extends StatelessWidget {
     return ScreenTypeLayout(
       mobile: PerfomanceMobile(),
       tablet: PerfomanceTabletLandscape(),
-      desktop: PerfomanceDesktop(),
+      desktop: RefinedLayoutBuilder(
+          small: (context) => PerfomanceMobile(),
+          normal: (context) => PerfomanceTabletLandscape(),
+          large: (context) => PerfomanceDesktop()),
     );
   }
 }

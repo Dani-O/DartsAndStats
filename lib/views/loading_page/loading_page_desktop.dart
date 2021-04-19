@@ -6,8 +6,7 @@ import 'package:flutter/rendering.dart';
 class LoadingPageDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    debugPaintSizeEnabled = false;
-    debugPrint("Desktop");
+    debugPrint("LoadingPage Desktop");
     return Stack(
       children: <Widget>[
         Container(

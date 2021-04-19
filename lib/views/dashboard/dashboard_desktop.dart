@@ -1,6 +1,9 @@
+import 'package:dartapp/views/dashboard/perfomance/perfomance_desktop.dart';
 import 'package:dartapp/views/dashboard/perfomance/performance.dart';
 import 'package:dartapp/views/dashboard/progress/progress.dart';
+import 'package:dartapp/views/dashboard/progress/progress_desktop.dart';
 import 'package:dartapp/views/dashboard/statistics/statistics.dart';
+import 'package:dartapp/views/dashboard/statistics/statistics_desktop.dart';
 import 'package:dartapp/widgets/menubar/menubar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -8,7 +11,7 @@ import 'package:flutter/rendering.dart';
 class DashboardDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    debugPaintSizeEnabled = false;
+    debugPrint("Dashboard Desktop");
     return Container(
       color: Colors.white,
       child: Column(
@@ -25,12 +28,12 @@ class DashboardDesktop extends StatelessWidget {
               children: <Widget>[
                 Flexible(
                   flex: 120,
-                  child: Progress(),
+                  child: ProgressDesktop(),
                 ),
                 Spacer(flex: 2),
                 Flexible(
                   flex: 40,
-                  child: Perfomance(),
+                  child: PerfomanceDesktop(),
                 ),
               ],
             ),
@@ -43,7 +46,7 @@ class DashboardDesktop extends StatelessWidget {
                 Flexible(
                   flex: 91,
                   fit: FlexFit.tight,
-                  child: Statistics(),
+                  child: StatisticsDesktop(),
                 ),
               ],
             ),

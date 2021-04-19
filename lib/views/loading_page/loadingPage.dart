@@ -13,6 +13,7 @@ class LoadingPage extends StatelessWidget {
     debugPrint(MediaQuery.of(context).size.width.toString());
     debugPrint(MediaQuery.of(context).size.height.toString());
     debugPrint(MediaQuery.of(context).devicePixelRatio.toString());
+
     return ScreenTypeLayout(
       mobile: LoadingPageMobile(),
       tablet: LoadingPageTabletLandscape(),

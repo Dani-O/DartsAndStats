@@ -10,9 +10,12 @@ class Progress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: ProgressMobile(),
-      tablet: ProgressTabletLandscape(),
-      desktop: ProgressDesktop(),
-    );
+        mobile: ProgressMobile(),
+        tablet: ProgressTabletLandscape(),
+        desktop: RefinedLayoutBuilder(
+          small: (context) => ProgressMobile(),
+          normal: (context) => ProgressTabletLandscape(),
+          large: (context) => ProgressDesktop(),
+        ));
   }
 }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class StatisticsDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    debugPrint("Statistics Desktop");
     return Padding(
         padding: EdgeInsets.only(right: 30, left: 30),
         child: Container(
