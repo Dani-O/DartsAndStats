@@ -13,15 +13,15 @@ class TextStats extends StatelessWidget {
   final double paddingTop;
 
   const TextStats(
-      {this.flex,
-      this.containerWidth,
-      this.paddingLeft,
-      this.paddingLeftTwo,
-      this.paddingRight,
-      this.paddingTop,
-      this.paddingTopTwo,
-      this.textFontsize,
-      this.valueFontsize});
+      {@required this.flex,
+      @required this.containerWidth,
+      @required this.paddingLeft,
+      @required this.paddingLeftTwo,
+      @required this.paddingRight,
+      @required this.paddingTop,
+      @required this.paddingTopTwo,
+      @required this.textFontsize,
+      @required this.valueFontsize});
 
   @override
   Widget build(BuildContext context) {
@@ -126,14 +126,14 @@ class CircleProgressIndicators extends StatelessWidget {
   final double textBottom;
 
   const CircleProgressIndicators(
-      {this.flex,
-      this.containerHeight,
-      this.indicatorHeight,
-      this.indicatorWidth,
-      this.valueFontsize,
-      this.textFontsize,
-      this.valueBottom,
-      this.textBottom});
+      {@required this.flex,
+      @required this.containerHeight,
+      @required this.indicatorHeight,
+      @required this.indicatorWidth,
+      @required this.valueFontsize,
+      @required this.textFontsize,
+      @required this.valueBottom,
+      @required this.textBottom});
 
   @override
   Widget build(BuildContext context) {
@@ -247,13 +247,13 @@ class VerticalProgressIndicators extends StatelessWidget {
   final double containerWidth;
   final double horizontalMargin;
   const VerticalProgressIndicators(
-      {this.flex,
-      this.paddingRight,
-      this.mainContainerHeight,
-      this.textFontsize,
-      this.containerHeight,
-      this.containerWidth,
-      this.horizontalMargin});
+      {@required this.flex,
+      @required this.paddingRight,
+      @required this.mainContainerHeight,
+      @required this.textFontsize,
+      @required this.containerHeight,
+      @required this.containerWidth,
+      @required this.horizontalMargin});
 
   @override
   Widget build(BuildContext context) {
@@ -266,14 +266,38 @@ class VerticalProgressIndicators extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                LinearIndicatorRow("first 9", 0.6, "60.2", textFontsize,
-                    containerHeight, containerWidth, horizontalMargin),
-                LinearIndicatorRow("first 12", 0.45, "45.9", textFontsize,
-                    containerHeight, containerWidth, horizontalMargin),
-                LinearIndicatorRow("first 15", 0.4, "40.2", textFontsize,
-                    containerHeight, containerWidth, horizontalMargin),
-                LinearIndicatorRow("3d avg", 0.46, "45.7", textFontsize,
-                    containerHeight, containerWidth, horizontalMargin),
+                LinearIndicatorRow(
+                    descriptionValue: "first 9",
+                    indicatorValue: 0.6,
+                    value: "60.2",
+                    textFontsize: textFontsize,
+                    containerHeight: containerHeight,
+                    containerWidth: containerWidth,
+                    horizontalMargin: horizontalMargin),
+                LinearIndicatorRow(
+                    descriptionValue: "first 12",
+                    indicatorValue: 0.45,
+                    value: "45.9",
+                    textFontsize: textFontsize,
+                    containerHeight: containerHeight,
+                    containerWidth: containerWidth,
+                    horizontalMargin: horizontalMargin),
+                LinearIndicatorRow(
+                    descriptionValue: "first 15",
+                    indicatorValue: 0.4,
+                    value: "40.2",
+                    textFontsize: textFontsize,
+                    containerHeight: containerHeight,
+                    containerWidth: containerWidth,
+                    horizontalMargin: horizontalMargin),
+                LinearIndicatorRow(
+                    descriptionValue: "3d avg",
+                    indicatorValue: 0.46,
+                    value: "45.7",
+                    textFontsize: textFontsize,
+                    containerHeight: containerHeight,
+                    containerWidth: containerWidth,
+                    horizontalMargin: horizontalMargin),
               ],
             )));
   }
@@ -288,13 +312,13 @@ class LinearIndicatorRow extends StatelessWidget {
   final double containerWidth;
   final double horizontalMargin;
   const LinearIndicatorRow(
-      this.descriptionValue,
-      this.indicatorValue,
-      this.value,
-      this.textFontsize,
-      this.containerHeight,
-      this.containerWidth,
-      this.horizontalMargin);
+      {@required this.descriptionValue,
+      @required this.indicatorValue,
+      @required this.value,
+      @required this.textFontsize,
+      @required this.containerHeight,
+      @required this.containerWidth,
+      @required this.horizontalMargin});
 
   @override
   Widget build(BuildContext context) {

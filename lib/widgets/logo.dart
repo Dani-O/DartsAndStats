@@ -8,12 +8,12 @@ class Logo extends StatelessWidget {
   final double logoTextPaddingLeft;
   final double logoTextFontsize;
   const Logo(
-      {this.marginLeft,
-      this.logoHeight,
-      this.logoWidth,
-      this.logoCircleFontsize,
-      this.logoTextPaddingLeft,
-      this.logoTextFontsize});
+      {@required this.marginLeft,
+      @required this.logoHeight,
+      @required this.logoWidth,
+      @required this.logoCircleFontsize,
+      @required this.logoTextPaddingLeft,
+      @required this.logoTextFontsize});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,10 @@ class LogoCircle extends StatelessWidget {
   final double logoWidth;
   final double logoHeight;
   final double fontsize;
-  const LogoCircle({this.logoHeight, this.logoWidth, this.fontsize});
+  const LogoCircle(
+      {@required this.logoHeight,
+      @required this.logoWidth,
+      @required this.fontsize});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -67,7 +70,7 @@ class LogoCircle extends StatelessWidget {
 
 class LogoText extends StatelessWidget {
   final double fontsize;
-  const LogoText({this.fontsize});
+  const LogoText({@required this.fontsize});
   @override
   Widget build(BuildContext context) {
     return Text(

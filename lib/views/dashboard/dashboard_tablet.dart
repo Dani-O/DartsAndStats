@@ -2,12 +2,13 @@ import 'package:dartapp/views/dashboard/perfomance/performance.dart';
 import 'package:dartapp/views/dashboard/statistics/statistics.dart';
 import 'package:dartapp/widgets/menubar/menubar.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter/rendering.dart';
 import 'progress/progress.dart';
 
 class DashboardTabletLandscape extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    debugPaintSizeEnabled = false;
     return Container(
       color: Colors.white,
       child: Column(

@@ -7,11 +7,11 @@ class Profilpicture extends StatelessWidget {
   final double outerBorderWidth;
   final double innerBorderWidth;
   const Profilpicture(
-      {this.marginRight,
-      this.containerHeight,
-      this.containerWidth,
-      this.outerBorderWidth,
-      this.innerBorderWidth});
+      {@required this.marginRight,
+      @required this.containerHeight,
+      @required this.containerWidth,
+      @required this.outerBorderWidth,
+      @required this.innerBorderWidth});
 
   @override
   Widget build(BuildContext context) {

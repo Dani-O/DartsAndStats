@@ -3,30 +3,31 @@ import 'package:flutter/material.dart';
 
 class TitleRow extends StatelessWidget {
   final double titleFontsize;
-  final double containerHeight;
-  final double containerWidth;
-  final double paddingLeft;
-  final double paddingRight;
-  final double paddingTop;
-  final double borderRadius;
-  final double textFontsize;
-  final double iconSize;
+  final double buttonHeight;
+  final double buttonWidth;
+  final double buttonPaddingLeft;
+  final double buttonPaddingRight;
+  final double buttonPaddingTop;
+  final double buttonBorderRadius;
+  final double buttonTextFontsize;
+  final double buttonIconSize;
   const TitleRow(
-      {this.titleFontsize,
-      this.containerHeight,
-      this.containerWidth,
-      this.paddingLeft,
-      this.paddingRight,
-      this.paddingTop,
-      this.borderRadius,
-      this.textFontsize,
-      this.iconSize});
+      {@required this.titleFontsize,
+      @required this.buttonHeight,
+      @required this.buttonWidth,
+      @required this.buttonPaddingLeft,
+      @required this.buttonPaddingRight,
+      @required this.buttonPaddingTop,
+      @required this.buttonBorderRadius,
+      @required this.buttonTextFontsize,
+      @required this.buttonIconSize});
 
   @override
   Widget build(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       Container(
-          padding: EdgeInsets.only(left: paddingLeft, top: paddingTop),
+          padding:
+              EdgeInsets.only(left: buttonPaddingLeft, top: buttonPaddingTop),
           child: Text(
             "PROGRESS",
             style: TextStyle(
@@ -37,13 +38,13 @@ class TitleRow extends StatelessWidget {
                 decoration: TextDecoration.none),
           )),
       SelectionButton(
-          this.containerHeight,
-          this.containerWidth,
-          this.paddingRight,
-          this.paddingTop,
-          this.borderRadius,
-          this.textFontsize,
-          this.iconSize)
+          this.buttonHeight,
+          this.buttonWidth,
+          this.buttonPaddingRight,
+          this.buttonPaddingTop,
+          this.buttonBorderRadius,
+          this.buttonTextFontsize,
+          this.buttonIconSize)
     ]);
   }
 }

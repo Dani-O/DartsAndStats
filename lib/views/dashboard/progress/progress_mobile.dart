@@ -26,14 +26,14 @@ class ProgressMobile extends StatelessWidget {
             child: Column(children: <Widget>[
               TitleRow(
                   titleFontsize: 20,
-                  containerHeight: 35,
-                  containerWidth: 130,
-                  paddingLeft: 40,
-                  paddingRight: 25,
-                  paddingTop: 25,
-                  borderRadius: 27,
-                  textFontsize: 18,
-                  iconSize: 25),
+                  buttonHeight: 35,
+                  buttonWidth: 130,
+                  buttonPaddingLeft: 40,
+                  buttonPaddingRight: 25,
+                  buttonPaddingTop: 25,
+                  buttonBorderRadius: 27,
+                  buttonTextFontsize: 18,
+                  buttonIconSize: 25),
               Expanded(
                   flex: 5,
                   child: Container(

@@ -2,12 +2,13 @@ import 'package:dartapp/views/dashboard/perfomance/performance.dart';
 import 'package:dartapp/views/dashboard/statistics/statistics.dart';
 import 'package:dartapp/widgets/topbar.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter/rendering.dart';
 import 'progress/progress.dart';
 
 class DashboardMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    debugPaintSizeEnabled = false;
     return SafeArea(
         child: Scaffold(
       backgroundColor: Colors.white,

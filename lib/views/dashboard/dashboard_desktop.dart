@@ -8,6 +8,7 @@ import 'package:flutter/rendering.dart';
 class DashboardDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    debugPaintSizeEnabled = false;
     return Container(
       color: Colors.white,
       child: Column(

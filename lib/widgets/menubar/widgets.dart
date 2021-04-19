@@ -25,23 +25,23 @@ class MenuBarWidget extends StatelessWidget {
   final double profilInnerBorderWidth;
 
   const MenuBarWidget(
-      {this.mainContainerMarginLeft,
-      this.mainContainerMarginRight,
-      this.mainContainerMarginTop,
-      this.mainContainerMarginBottom,
-      this.logoHeight,
-      this.logoWidth,
-      this.logoCircleFontsize,
-      this.logoTextPaddingLeft,
-      this.logoTextFontsize,
-      this.menuItemPaddingRight,
-      this.menuFontsize,
-      this.menuDividerWidth,
-      this.menuDividerHeight,
-      this.profilContainerHeight,
-      this.profilContainerWidth,
-      this.profilOuterBorderWidth,
-      this.profilInnerBorderWidth});
+      {@required this.mainContainerMarginLeft,
+      @required this.mainContainerMarginRight,
+      @required this.mainContainerMarginTop,
+      @required this.mainContainerMarginBottom,
+      @required this.logoHeight,
+      @required this.logoWidth,
+      @required this.logoCircleFontsize,
+      @required this.logoTextPaddingLeft,
+      @required this.logoTextFontsize,
+      @required this.menuItemPaddingRight,
+      @required this.menuFontsize,
+      @required this.menuDividerWidth,
+      @required this.menuDividerHeight,
+      @required this.profilContainerHeight,
+      @required this.profilContainerWidth,
+      @required this.profilOuterBorderWidth,
+      @required this.profilInnerBorderWidth});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -66,28 +66,27 @@ class MenuBarWidget extends StatelessWidget {
               MenuItem(
                   text: "Dashboard",
                   visible: true,
-                  itemPaddingRight: menuItemPaddingRight,
                   fontsize: menuFontsize,
                   dividerHeight: menuDividerHeight,
                   dividerWidth: menuDividerWidth),
+              SizedBox(width: menuItemPaddingRight),
               MenuItem(
                   text: "Play Game",
                   visible: false,
-                  itemPaddingRight: menuItemPaddingRight,
                   fontsize: menuFontsize,
                   dividerHeight: menuDividerHeight,
                   dividerWidth: menuDividerWidth),
+              SizedBox(width: menuItemPaddingRight),
               MenuItem(
                   text: "History",
                   visible: false,
-                  itemPaddingRight: menuItemPaddingRight,
                   fontsize: menuFontsize,
                   dividerHeight: menuDividerHeight,
                   dividerWidth: menuDividerWidth),
+              SizedBox(width: menuItemPaddingRight),
               MenuItem(
                   text: "Player",
                   visible: false,
-                  itemPaddingRight: menuItemPaddingRight,
                   fontsize: menuFontsize,
                   dividerHeight: menuDividerHeight,
                   dividerWidth: menuDividerWidth),
@@ -108,22 +107,20 @@ class MenuBarWidget extends StatelessWidget {
 class MenuItem extends StatelessWidget {
   final String text;
   final bool visible;
-  final double itemPaddingRight;
   final double fontsize;
   final double dividerWidth;
   final double dividerHeight;
   const MenuItem({
-    this.text,
-    this.visible,
-    this.itemPaddingRight,
-    this.fontsize,
-    this.dividerWidth,
-    this.dividerHeight,
+    @required this.text,
+    @required this.visible,
+    @required this.fontsize,
+    @required this.dividerWidth,
+    @required this.dividerHeight,
   });
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(right: itemPaddingRight),
+      padding: EdgeInsets.only(right: 0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[

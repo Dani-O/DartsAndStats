@@ -34,12 +34,12 @@ class VarianceInCmCircle extends StatelessWidget {
   final double valueFontsize;
   final double descriptionFontsize;
   const VarianceInCmCircle(
-      {this.containerWidth,
-      this.borderWidth,
-      this.varianceValue,
-      this.valueFontsize,
-      this.sizeboxHeight,
-      this.descriptionFontsize});
+      {@required this.containerWidth,
+      @required this.borderWidth,
+      @required this.varianceValue,
+      @required this.valueFontsize,
+      @required this.sizeboxHeight,
+      @required this.descriptionFontsize});
 
   @override
   Widget build(BuildContext context) {
@@ -89,13 +89,13 @@ class DetailedVariance extends StatelessWidget {
   final double containerBorderWidth;
 
   const DetailedVariance(
-      {this.value,
-      this.valueFontsize,
-      this.sizeboxHeight,
-      this.description,
-      this.descriptionFontsize,
-      this.containerWidth,
-      this.containerBorderWidth});
+      {@required this.value,
+      @required this.valueFontsize,
+      @required this.sizeboxHeight,
+      @required this.description,
+      @required this.descriptionFontsize,
+      @required this.containerWidth,
+      @required this.containerBorderWidth});
 
   @override
   Widget build(BuildContext context) {
@@ -148,13 +148,13 @@ class DetailedVarianceHorizontal extends StatelessWidget {
   final double containerBorderWidth;
 
   const DetailedVarianceHorizontal(
-      {this.value,
-      this.valueFontsize,
-      this.sizeboxWidth,
-      this.description,
-      this.descriptionFontsize,
-      this.containerWidth,
-      this.containerBorderWidth});
+      {@required this.value,
+      @required this.valueFontsize,
+      @required this.sizeboxWidth,
+      @required this.description,
+      @required this.descriptionFontsize,
+      @required this.containerWidth,
+      @required this.containerBorderWidth});
 
   @override
   Widget build(BuildContext context) {

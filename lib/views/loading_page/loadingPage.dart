@@ -9,16 +9,13 @@ class LoadingPage extends StatelessWidget {
   const LoadingPage();
   @override
   Widget build(BuildContext context) {
-    debugPrint(MediaQuery.of(context).orientation.toString());
+    //debugPrint(MediaQuery.of(context).orientation.toString());
     debugPrint(MediaQuery.of(context).size.width.toString());
     debugPrint(MediaQuery.of(context).size.height.toString());
+    debugPrint(MediaQuery.of(context).devicePixelRatio.toString());
     return ScreenTypeLayout(
       mobile: LoadingPageMobile(),
-      tablet: OrientationLayoutBuilder(portrait: (context) {
-        return LoadingPageTabletPortrait();
-      }, landscape: (context) {
-        return LoadingPageTabletLandscape();
-      }),
+      tablet: LoadingPageTabletLandscape(),
       desktop: LoadingPageDesktop(),
     );
   }

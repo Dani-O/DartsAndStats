@@ -18,14 +18,14 @@ class ProgressDesktop extends StatelessWidget {
             child: Column(children: <Widget>[
               TitleRow(
                   titleFontsize: 25,
-                  containerHeight: 40,
-                  containerWidth: 130,
-                  paddingLeft: 40,
-                  paddingRight: 40,
-                  paddingTop: 25,
-                  borderRadius: 27,
-                  textFontsize: 18,
-                  iconSize: 25),
+                  buttonHeight: 40,
+                  buttonWidth: 130,
+                  buttonPaddingLeft: 40,
+                  buttonPaddingRight: 40,
+                  buttonPaddingTop: 25,
+                  buttonBorderRadius: 27,
+                  buttonTextFontsize: 18,
+                  buttonIconSize: 25),
               Expanded(
                   flex: 5,
                   child: Container(
