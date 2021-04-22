@@ -8,29 +8,53 @@ import 'views/loading_page/loadingPage.dart';
 import 'package:device_preview/device_preview.dart';
 
 void main() {
-  ResponsiveSizingConfig.instance.setCustomBreakpoints(
-    ScreenBreakpoints(desktop: 950, tablet: 600, watch: 0),
-    customRefinedBreakpoints: RefinedBreakpoints(
-      // Desktop
-      desktopExtraLarge: 1500,
-      desktopLarge: 1250,
-      desktopNormal: 1020,
-      desktopSmall: 0,
-      // Tablet
-      tabletExtraLarge: 1500,
-      tabletLarge: 1250,
-      tabletNormal: 950,
-      tabletSmall: 0,
-      // Mobile
-      mobileExtraLarge: 480,
-      mobileLarge: 414,
-      mobileNormal: 375,
-      mobileSmall: 320,
-    ),
-  );
+  if (kIsWeb) {
+    ResponsiveSizingConfig.instance.setCustomBreakpoints(
+      ScreenBreakpoints(desktop: 2, tablet: 1, watch: 0),
+      customRefinedBreakpoints: RefinedBreakpoints(
+        // Desktop
+        desktopExtraLarge: 1600,
+        desktopLarge: 1140,
+        desktopNormal: 700,
+        desktopSmall: 0,
+        // Tablet
+        tabletExtraLarge: 1500,
+        tabletLarge: 1024,
+        tabletNormal: 600,
+        tabletSmall: 0,
+        // Mobile
+        mobileExtraLarge: 480,
+        mobileLarge: 414,
+        mobileNormal: 375,
+        mobileSmall: 320,
+      ),
+    );
+  } else {
+    debugPrint("else");
+    ResponsiveSizingConfig.instance.setCustomBreakpoints(
+      ScreenBreakpoints(desktop: 1500, tablet: 600, watch: 0),
+      customRefinedBreakpoints: RefinedBreakpoints(
+        // Desktop
+        desktopExtraLarge: 1500,
+        desktopLarge: 1250,
+        desktopNormal: 1020,
+        desktopSmall: 0,
+        // Tablet
+        tabletExtraLarge: 1500,
+        tabletLarge: 900,
+        tabletNormal: 600,
+        tabletSmall: 0,
+        // Mobile
+        mobileExtraLarge: 480,
+        mobileLarge: 414,
+        mobileNormal: 375,
+        mobileSmall: 320,
+      ),
+    );
+  }
   return runApp(
     DevicePreview(
-      enabled: !kReleaseMode,
+      enabled: kIsWeb ? false : true, //!kReleaseMode,
       builder: (context) => MyApp(), // Wrap your app
     ),
   );
@@ -39,7 +63,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    debugPaintSizeEnabled = false;
+    debugPaintSizeEnabled = kIsWeb ? false : false;
     //SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeRight]);
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       systemNavigationBarColor: Colors.amber, // navigation bar color

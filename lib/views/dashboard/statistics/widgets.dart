@@ -8,12 +8,12 @@ class TextStats extends StatelessWidget {
   final double paddingTopTwo;
   final double textFontsize;
   final double valueFontsize;
-  final int flex;
+  final double mainContainerWidth;
   final double containerWidth;
   final double paddingTop;
 
   const TextStats(
-      {@required this.flex,
+      {@required this.mainContainerWidth,
       @required this.containerWidth,
       @required this.paddingLeft,
       @required this.paddingLeftTwo,
@@ -25,8 +25,8 @@ class TextStats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        flex: flex,
+    return Container(
+        width: mainContainerWidth,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -122,18 +122,21 @@ class CircleProgressIndicators extends StatelessWidget {
   final double indicatorWidth;
   final double valueFontsize;
   final double textFontsize;
-  final double valueBottom;
+  final double padding;
   final double textBottom;
+  final double paddingRight;
 
-  const CircleProgressIndicators(
-      {@required this.flex,
-      @required this.containerHeight,
-      @required this.indicatorHeight,
-      @required this.indicatorWidth,
-      @required this.valueFontsize,
-      @required this.textFontsize,
-      @required this.valueBottom,
-      @required this.textBottom});
+  const CircleProgressIndicators({
+    @required this.flex,
+    @required this.containerHeight,
+    this.indicatorHeight,
+    @required this.indicatorWidth,
+    @required this.valueFontsize,
+    @required this.textFontsize,
+    @required this.padding,
+    @required this.textBottom,
+    @required this.paddingRight,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -141,57 +144,65 @@ class CircleProgressIndicators extends StatelessWidget {
         flex: flex,
         child: Container(
           height: containerHeight,
-          child:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-            CircleIndicatorStack(
-                indicatorHeight: indicatorHeight,
-                indicatorWidth: indicatorWidth,
-                valueFontsize: valueFontsize,
-                valueBottom: valueBottom,
-                textBottom: textBottom,
-                value: "50%",
-                indicatorValue: 0.5,
-                descriptionValue: "checkout"),
-            CircleIndicatorStack(
-                indicatorHeight: indicatorHeight,
-                indicatorWidth: indicatorWidth,
-                valueFontsize: valueFontsize,
-                valueBottom: valueBottom,
-                textBottom: textBottom,
-                value: "2 / 4",
-                indicatorValue: 0.5,
-                descriptionValue: "180s"),
-            CircleIndicatorStack(
-                indicatorHeight: indicatorHeight,
-                indicatorWidth: indicatorWidth,
-                valueFontsize: valueFontsize,
-                valueBottom: valueBottom,
-                textBottom: textBottom,
-                value: "17 / 34",
-                indicatorValue: 0.5,
-                descriptionValue: "100+"),
+          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Expanded(
+                flex: 1,
+                child: CircleIndicatorStack(
+                    indicatorHeight: indicatorHeight,
+                    indicatorWidth: indicatorWidth,
+                    valueFontsize: valueFontsize,
+                    padding: padding,
+                    textBottom: textBottom,
+                    value: "50%",
+                    indicatorValue: 0.5,
+                    descriptionValue: "checkout")),
+            SizedBox(width: paddingRight),
+            Expanded(
+                flex: 1,
+                child: CircleIndicatorStack(
+                    indicatorHeight: indicatorHeight,
+                    indicatorWidth: indicatorWidth,
+                    valueFontsize: valueFontsize,
+                    padding: padding,
+                    textBottom: textBottom,
+                    value: "2 / 4",
+                    indicatorValue: 0.5,
+                    descriptionValue: "180s")),
+            SizedBox(width: paddingRight),
+            Expanded(
+                flex: 1,
+                child: CircleIndicatorStack(
+                  indicatorHeight: indicatorHeight,
+                  indicatorWidth: indicatorWidth,
+                  valueFontsize: valueFontsize,
+                  padding: padding,
+                  textBottom: textBottom,
+                  value: "17 / 34",
+                  indicatorValue: 0.5,
+                  descriptionValue: "100+",
+                ))
           ]),
         ));
   }
 }
 
 class CircleIndicatorStack extends StatelessWidget {
-  const CircleIndicatorStack(
-      {Key key,
-      @required this.indicatorHeight,
-      @required this.indicatorWidth,
-      @required this.valueFontsize,
-      @required this.valueBottom,
-      @required this.textBottom,
-      @required this.indicatorValue,
-      @required this.value,
-      @required this.descriptionValue})
-      : super(key: key);
+  const CircleIndicatorStack({
+    Key key,
+    @required this.indicatorHeight,
+    @required this.indicatorWidth,
+    @required this.valueFontsize,
+    @required this.padding,
+    @required this.textBottom,
+    @required this.indicatorValue,
+    @required this.value,
+    @required this.descriptionValue,
+  }) : super(key: key);
 
   final double indicatorHeight;
   final double indicatorWidth;
   final double valueFontsize;
-  final double valueBottom;
+  final double padding;
   final double textBottom;
   final double indicatorValue;
   final String value;
@@ -200,17 +211,22 @@ class CircleIndicatorStack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(alignment: Alignment.center, children: [
+      AspectRatio(
+          aspectRatio: 1,
+          child: Container(
+              height: indicatorHeight,
+              width: indicatorWidth,
+              child: CircularProgressIndicator(
+                backgroundColor:
+                    Theme.of(context).primaryColor.withOpacity(0.1),
+                valueColor: AlwaysStoppedAnimation(
+                    Theme.of(context).primaryColor.withOpacity(1)),
+                strokeWidth: 5,
+                value: indicatorValue,
+              ))),
       Container(
-          height: indicatorHeight,
-          width: indicatorWidth,
-          child: CircularProgressIndicator(
-            backgroundColor: Theme.of(context).primaryColor.withOpacity(0.1),
-            valueColor: AlwaysStoppedAnimation(
-                Theme.of(context).primaryColor.withOpacity(1)),
-            strokeWidth: 5,
-            value: indicatorValue,
-          )),
-      Positioned(
+        padding: EdgeInsets.only(bottom: padding),
+        alignment: Alignment.center,
         child: Text(
           value,
           style: TextStyle(
@@ -220,20 +236,19 @@ class CircleIndicatorStack extends StatelessWidget {
               color: Theme.of(context).primaryColor,
               decoration: TextDecoration.none),
         ),
-        bottom: valueBottom,
       ),
-      Positioned(
-        child: Text(
-          descriptionValue,
-          style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.normal,
-              fontFamily: "Segoe UI",
-              color: Theme.of(context).primaryColor.withOpacity(0.6),
-              decoration: TextDecoration.none),
-        ),
-        bottom: textBottom,
-      )
+      Container(
+          alignment: Alignment.center,
+          padding: EdgeInsets.only(top: padding),
+          child: Text(
+            descriptionValue,
+            style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.normal,
+                fontFamily: "Segoe UI",
+                color: Theme.of(context).primaryColor.withOpacity(0.6),
+                decoration: TextDecoration.none),
+          )),
     ]);
   }
 }
@@ -244,7 +259,7 @@ class VerticalProgressIndicators extends StatelessWidget {
   final double mainContainerHeight;
   final double textFontsize;
   final double containerHeight;
-  final double containerWidth;
+  final int containerWidth;
   final double horizontalMargin;
   const VerticalProgressIndicators(
       {@required this.flex,
@@ -265,6 +280,7 @@ class VerticalProgressIndicators extends StatelessWidget {
             color: Colors.white,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 LinearIndicatorRow(
                     descriptionValue: "first 9",
@@ -309,7 +325,7 @@ class LinearIndicatorRow extends StatelessWidget {
   final String value;
   final double textFontsize;
   final double containerHeight;
-  final double containerWidth;
+  final int containerWidth;
   final double horizontalMargin;
   const LinearIndicatorRow(
       {@required this.descriptionValue,
@@ -322,43 +338,42 @@ class LinearIndicatorRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: getValueForScreenType<MainAxisAlignment>(
-        context: context,
-        mobile: MainAxisAlignment.center,
-        tablet: MainAxisAlignment.end,
-        desktop: MainAxisAlignment.end,
-      ),
-      children: [
-        Text(
-          descriptionValue,
-          style: TextStyle(
-              fontSize: textFontsize,
-              fontWeight: FontWeight.normal,
-              fontFamily: "Segoe UI",
-              color: Theme.of(context).primaryColor.withOpacity(0.6),
-              decoration: TextDecoration.none),
-        ),
-        Container(
-            margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
-            width: containerWidth,
-            height: containerHeight,
-            child: LinearProgressIndicator(
-                backgroundColor:
-                    Theme.of(context).primaryColor.withOpacity(0.1),
-                valueColor: AlwaysStoppedAnimation(
-                    Theme.of(context).primaryColor.withOpacity(1)),
-                value: indicatorValue)),
-        Text(
-          value,
-          style: TextStyle(
-              fontSize: textFontsize,
-              fontWeight: FontWeight.normal,
-              fontFamily: "Segoe UI",
-              color: Theme.of(context).primaryColor.withOpacity(0.6),
-              decoration: TextDecoration.none),
-        ),
-      ],
-    );
+    return Container(
+        color: Colors.white,
+        child: Row(
+          children: [
+            Text(
+              descriptionValue,
+              style: TextStyle(
+                  fontSize: textFontsize,
+                  fontWeight: FontWeight.normal,
+                  fontFamily: "Segoe UI",
+                  color: Theme.of(context).primaryColor.withOpacity(0.6),
+                  decoration: TextDecoration.none),
+            ),
+            Expanded(
+              flex: containerWidth,
+              child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
+                  height: containerHeight,
+                  child: LinearProgressIndicator(
+                      backgroundColor:
+                          Theme.of(context).primaryColor.withOpacity(0.1),
+                      valueColor: AlwaysStoppedAnimation(
+                          Theme.of(context).primaryColor.withOpacity(1)),
+                      value: indicatorValue)),
+            ),
+            Text(
+              value,
+              style: TextStyle(
+                  fontSize: textFontsize,
+                  fontWeight: FontWeight.normal,
+                  fontFamily: "Segoe UI",
+                  color: Theme.of(context).primaryColor.withOpacity(0.6),
+                  decoration: TextDecoration.none),
+            ),
+            //  Spacer(flex: 1),
+          ],
+        ));
   }
 }

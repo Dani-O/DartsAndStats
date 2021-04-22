@@ -1,4 +1,4 @@
-import 'package:dartapp/views/dashboard/perfomance/perfomance_desktop.dart';
+/*import 'package:dartapp/views/dashboard/perfomance/perfomance_desktop.dart';
 import 'package:dartapp/views/dashboard/perfomance/perfomance_mobile.dart';
 import 'package:dartapp/views/dashboard/perfomance/perfomance_tablet.dart';
 
@@ -19,3 +19,5 @@ class Perfomance extends StatelessWidget {
     );
   }
 }
+
+*/

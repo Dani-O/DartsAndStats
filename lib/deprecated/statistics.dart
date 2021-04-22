@@ -1,4 +1,4 @@
-import 'package:dartapp/views/dashboard/statistics/statistics_desktop.dart';
+/*import 'package:dartapp/views/dashboard/statistics/statistics_desktop.dart';
 import 'package:dartapp/views/dashboard/statistics/statistics_mobile.dart';
 import 'package:dartapp/views/dashboard/statistics/statistics_tablet.dart';
 import 'package:flutter/material.dart';
@@ -18,3 +18,4 @@ class Statistics extends StatelessWidget {
             large: (context) => StatisticsDesktop()));
   }
 }
+*/

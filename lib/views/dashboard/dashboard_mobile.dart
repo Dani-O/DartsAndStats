@@ -1,12 +1,9 @@
 import 'package:dartapp/views/dashboard/perfomance/perfomance_mobile.dart';
-import 'package:dartapp/views/dashboard/perfomance/performance.dart';
 import 'package:dartapp/views/dashboard/progress/progress_mobile.dart';
-import 'package:dartapp/views/dashboard/statistics/statistics.dart';
 import 'package:dartapp/views/dashboard/statistics/statistics_mobile.dart';
 import 'package:dartapp/widgets/topbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'progress/progress.dart';
 
 class DashboardMobile extends StatelessWidget {
   @override
@@ -18,9 +15,9 @@ class DashboardMobile extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          SizedBox(height: 5),
+          SizedBox(height: 10),
           Topbar(),
-          Spacer(flex: 1),
+          Spacer(flex: 3),
           Expanded(
             flex: 80,
             child: ListView(
@@ -63,32 +60,3 @@ class DashboardMobile extends StatelessWidget {
     ));
   }
 }
-
-/*
-return SafeArea(
-        child: Container(
-      color: Colors.white,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          SizedBox(height: 5),
-          Topbar(),
-          Spacer(flex: 1),
-          Expanded(
-            flex: 80,
-            child: ListView(
-              children: [
-                Progress(),
-                SizedBox(height: 20),
-                Perfomance(),
-                SizedBox(height: 20),
-                Statistics(),
-              ],
-            ),
-          ),
-          MenuBar(),
-        ],
-      ),
-    ))
-
-    */

@@ -24,28 +24,31 @@ class TitleRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-      Container(
-          padding:
-              EdgeInsets.only(left: buttonPaddingLeft, top: buttonPaddingTop),
-          child: Text(
-            "PROGRESS",
-            style: TextStyle(
-                fontSize: titleFontsize,
-                fontWeight: FontWeight.bold,
-                fontFamily: "Segoe UI",
-                color: Theme.of(context).primaryColor,
-                decoration: TextDecoration.none),
-          )),
-      SelectionButton(
-          this.buttonHeight,
-          this.buttonWidth,
-          this.buttonPaddingRight,
-          this.buttonPaddingTop,
-          this.buttonBorderRadius,
-          this.buttonTextFontsize,
-          this.buttonIconSize)
-    ]);
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+              padding: EdgeInsets.only(
+                  left: buttonPaddingLeft, top: buttonPaddingTop),
+              child: Text(
+                "PROGRESS",
+                style: TextStyle(
+                    fontSize: titleFontsize,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Segoe UI",
+                    color: Theme.of(context).primaryColor,
+                    decoration: TextDecoration.none),
+              )),
+          SelectionButton(
+              this.buttonHeight,
+              this.buttonWidth,
+              this.buttonPaddingRight,
+              this.buttonPaddingTop,
+              this.buttonBorderRadius,
+              this.buttonTextFontsize,
+              this.buttonIconSize)
+        ]);
   }
 }
 
@@ -113,30 +116,46 @@ class Chart extends StatelessWidget {
   Widget build(BuildContext context) {
     return LineChart(
       LineChartData(
-        /*
         lineTouchData: LineTouchData(
-          
-          
+          getTouchedSpotIndicator:
+              (LineChartBarData barData, List<int> spotIndexes) {
+            return spotIndexes.map((spotIndex) {
+              final FlSpot spot = barData.spots[spotIndex];
+              if (spot.x == 0 || spot.x == 6) {
+                return null;
+              }
+              return TouchedSpotIndicatorData(
+                FlLine(
+                    color: Color.fromARGB(255, 205, 212, 213), strokeWidth: 4),
+                FlDotData(getDotPainter: (spot, percent, barData, index) {
+                  return FlDotCirclePainter(
+                      radius: 10,
+                      color: Color.fromRGBO(73, 106, 112, 1),
+                      strokeWidth: 3,
+                      strokeColor: Colors.white);
+                }),
+              );
+            }).toList();
+          },
           touchTooltipData: LineTouchTooltipData(
               maxContentWidth: 100,
-              tooltipBgColor: Colors.orange,
+              tooltipMargin: 20,
+              tooltipRoundedRadius: 10,
+              tooltipBgColor: Colors.white,
               getTooltipItems: (touchedSpots) {
                 return touchedSpots.map((LineBarSpot touchedSpot) {
                   final textStyle = TextStyle(
-                    color: touchedSpot.bar.colors[0],
+                    color: Color.fromRGBO(73, 106, 112, 1),
                     fontWeight: FontWeight.bold,
                     fontSize: 14,
                   );
                   return LineTooltipItem(
-                      '${touchedSpot.x}, ${touchedSpot.y.toStringAsFixed(2)}',
-                      textStyle);
+                      '${touchedSpot.y.toStringAsFixed(2)}', textStyle);
                 }).toList();
               }),
           handleBuiltInTouches: true,
           getTouchLineStart: (data, index) => 0,
         ),
-        */
-
         minX: -1,
         maxX: 14,
         minY: 0,
@@ -146,7 +165,7 @@ class Chart extends StatelessWidget {
           show: false,
           getDrawingHorizontalLine: (value) {
             return FlLine(
-              color: const Color(0xff37434d),
+              color: Colors.red,
               strokeWidth: 1,
             );
           },

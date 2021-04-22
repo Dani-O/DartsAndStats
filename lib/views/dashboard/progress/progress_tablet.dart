@@ -6,7 +6,7 @@ class ProgressTabletLandscape extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(left: 30, right: 20),
+        padding: EdgeInsets.only(left: 20, right: 20),
         child: Container(
             decoration: BoxDecoration(
                 color: Color.fromARGB(255, 205, 212, 213),

@@ -10,9 +10,12 @@ class LoadingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //debugPrint(MediaQuery.of(context).orientation.toString());
-    debugPrint(MediaQuery.of(context).size.width.toString());
-    debugPrint(MediaQuery.of(context).size.height.toString());
-    debugPrint(MediaQuery.of(context).devicePixelRatio.toString());
+    debugPrint("Width: " + MediaQuery.of(context).size.width.toString());
+    debugPrint("Height: " + MediaQuery.of(context).size.height.toString());
+    debugPrint(
+        "DeviceRatio: " + MediaQuery.of(context).devicePixelRatio.toString());
+    debugPrint("Shortest Side: " +
+        MediaQuery.of(context).size.shortestSide.toString());
 
     return ScreenTypeLayout(
       mobile: LoadingPageMobile(),

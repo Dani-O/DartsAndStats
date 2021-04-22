@@ -25,10 +25,12 @@ class ProgressMobile extends StatelessWidget {
             ),
             child: Column(children: <Widget>[
               TitleRow(
-                  titleFontsize: 20,
+                  titleFontsize:
+                      MediaQuery.of(context).size.width < 350 ? 18 : 20,
                   buttonHeight: 35,
                   buttonWidth: 130,
-                  buttonPaddingLeft: 40,
+                  buttonPaddingLeft:
+                      MediaQuery.of(context).size.width < 350 ? 25 : 40,
                   buttonPaddingRight: 25,
                   buttonPaddingTop: 25,
                   buttonBorderRadius: 27,

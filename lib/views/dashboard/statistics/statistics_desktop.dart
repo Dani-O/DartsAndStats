@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class StatisticsDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    debugPrint("Statistics Desktop");
+    //  debugPrint("Statistics Desktop");
     return Padding(
         padding: EdgeInsets.only(right: 30, left: 30),
         child: Container(
@@ -15,7 +15,8 @@ class StatisticsDesktop extends StatelessWidget {
                 Radius.circular(38),
               ),
             ),
-            child: Column(children: [
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.start, children: [
               Container(
                   height: 50,
                   alignment: Alignment.topLeft,
@@ -29,37 +30,53 @@ class StatisticsDesktop extends StatelessWidget {
                         color: Theme.of(context).primaryColor,
                         decoration: TextDecoration.none),
                   )),
-              Expanded(
-                  flex: 5,
+              Container(
+                  height: 220,
+                  color: Colors.red.withOpacity(0),
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         TextStats(
-                            flex: 2,
+                            mainContainerWidth: 270,
                             containerWidth: 120,
-                            paddingLeft: 40,
+                            paddingLeft:
+                                MediaQuery.of(context).size.width < 1500
+                                    ? 20
+                                    : 40,
                             paddingLeftTwo: 40,
                             paddingRight: 40,
                             paddingTop: 40,
                             paddingTopTwo: 20,
                             textFontsize: 16,
                             valueFontsize: 22),
+                        Spacer(
+                            flex: MediaQuery.of(context).size.width < 1500
+                                ? 2
+                                : 4),
                         CircleProgressIndicators(
-                            flex: 3,
-                            containerHeight: 200,
+                            flex: 18,
+                            containerHeight: 170,
                             indicatorHeight: 140,
                             indicatorWidth: 140,
                             valueFontsize: 20,
                             textFontsize: 16,
-                            valueBottom: 70,
-                            textBottom: 45),
+                            padding: 30,
+                            textBottom: 45,
+                            paddingRight: 40),
+                        Spacer(
+                            flex: MediaQuery.of(context).size.width < 350
+                                ? 2
+                                : 4),
                         VerticalProgressIndicators(
-                            flex: 3,
-                            paddingRight: 40,
+                            flex: 14,
+                            paddingRight:
+                                MediaQuery.of(context).size.width < 1500
+                                    ? 20
+                                    : 40,
                             mainContainerHeight: 140,
                             textFontsize: 15,
                             containerHeight: 5,
-                            containerWidth: 240,
+                            containerWidth: 5,
                             horizontalMargin: 10),
                       ])),
             ])));

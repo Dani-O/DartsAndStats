@@ -8,7 +8,6 @@ class PerfomanceDesktop extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.only(right: 30),
         child: Container(
-            //  width: double.infinity,
             decoration: BoxDecoration(
               color: Color.fromRGBO(73, 106, 112, 1),
               borderRadius: BorderRadius.all(
@@ -37,7 +36,7 @@ class PerfomanceDesktop extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                       VarianceInCmCircle(
-                          containerWidth: 150,
+                          containerWidth: 180,
                           borderWidth: 3,
                           varianceValue: "3.2",
                           valueFontsize: 60,

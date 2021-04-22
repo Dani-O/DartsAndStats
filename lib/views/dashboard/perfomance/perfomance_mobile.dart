@@ -28,7 +28,10 @@ class PerfomanceMobile extends StatelessWidget {
               Expanded(
                   flex: 2,
                   child: PerfomanceTitle(
-                      edgeInsets: EdgeInsets.only(left: 40, top: 25),
+                      edgeInsets: EdgeInsets.only(
+                          left:
+                              MediaQuery.of(context).size.width < 350 ? 20 : 40,
+                          top: 25),
                       fontsize: 20)),
               Expanded(
                 flex: 8,
@@ -37,16 +40,29 @@ class PerfomanceMobile extends StatelessWidget {
                     Expanded(
                         flex: 2,
                         child: Container(
-                            alignment: Alignment.centerRight,
+                            alignment: MediaQuery.of(context).size.width < 350
+                                ? Alignment.center
+                                : Alignment.centerRight,
                             child: VarianceInCmCircle(
-                              containerWidth: 150,
+                              containerWidth:
+                                  MediaQuery.of(context).size.width < 350
+                                      ? 120
+                                      : 160,
                               borderWidth: 3,
                               varianceValue: "3.2",
-                              valueFontsize: 40,
+                              valueFontsize:
+                                  MediaQuery.of(context).size.width < 350
+                                      ? 30
+                                      : 40,
                               sizeboxHeight: 10,
-                              descriptionFontsize: 15,
+                              descriptionFontsize:
+                                  MediaQuery.of(context).size.width < 350
+                                      ? 12
+                                      : 15,
                             ))),
-                    SizedBox(width: 30),
+                    SizedBox(
+                        width:
+                            MediaQuery.of(context).size.width < 350 ? 20 : 30),
                     Expanded(
                       flex: 2,
                       child: Column(
@@ -54,20 +70,38 @@ class PerfomanceMobile extends StatelessWidget {
                         children: [
                           DetailedVarianceHorizontal(
                               value: "2.7",
-                              valueFontsize: 30,
-                              sizeboxWidth: 25,
+                              valueFontsize:
+                                  MediaQuery.of(context).size.width < 350
+                                      ? 25
+                                      : 30,
+                              sizeboxWidth:
+                                  MediaQuery.of(context).size.width < 350
+                                      ? 20
+                                      : 25,
                               description: "vertical \nvariance in cm",
                               descriptionFontsize: 12,
-                              containerWidth: 60,
+                              containerWidth:
+                                  MediaQuery.of(context).size.width < 350
+                                      ? 50
+                                      : 60,
                               containerBorderWidth: 3),
                           SizedBox(height: 30),
                           DetailedVarianceHorizontal(
                               value: "3.7",
-                              valueFontsize: 30,
-                              sizeboxWidth: 25,
+                              valueFontsize:
+                                  MediaQuery.of(context).size.width < 350
+                                      ? 25
+                                      : 30,
+                              sizeboxWidth:
+                                  MediaQuery.of(context).size.width < 350
+                                      ? 20
+                                      : 25,
                               description: "horizontal \nvariance in cm",
                               descriptionFontsize: 12,
-                              containerWidth: 60,
+                              containerWidth:
+                                  MediaQuery.of(context).size.width < 350
+                                      ? 50
+                                      : 60,
                               containerBorderWidth: 3),
                         ],
                       ),
