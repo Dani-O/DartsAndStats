@@ -24,7 +24,7 @@ class StatisticsDesktop extends StatelessWidget {
                   child: Text(
                     "STATISTICS",
                     style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
                         fontFamily: "Segoe UI",
                         color: Theme.of(context).primaryColor,

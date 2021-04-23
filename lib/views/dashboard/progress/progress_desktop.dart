@@ -17,7 +17,7 @@ class ProgressDesktop extends StatelessWidget {
                 )),
             child: Column(children: <Widget>[
               TitleRow(
-                  titleFontsize: 25,
+                  titleFontsize: 22,
                   buttonHeight: 40,
                   buttonWidth: 130,
                   buttonPaddingLeft: 40,

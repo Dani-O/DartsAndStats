@@ -19,8 +19,22 @@ class LoadingPage extends StatelessWidget {
 
     return ScreenTypeLayout(
       mobile: LoadingPageMobile(),
-      tablet: LoadingPageTabletLandscape(),
-      desktop: LoadingPageDesktop(),
+      tablet: OrientationLayoutBuilder(
+        portrait: (context) => RefinedLayoutBuilder(
+            small: (context) => LoadingPageMobile(),
+            normal: (context) => LoadingPageTabletLandscape(),
+            large: (context) => LoadingPageDesktop()),
+        landscape: (context) => RefinedLayoutBuilder(
+            small: (context) => LoadingPageMobile(),
+            normal: (context) => LoadingPageTabletLandscape(),
+            large: (context) => LoadingPageDesktop()),
+      ),
+      desktop: RefinedLayoutBuilder(
+        small: (context) => LoadingPageMobile(),
+        normal: (context) => LoadingPageTabletLandscape(),
+        large: (context) => LoadingPageDesktop(),
+        extraLarge: (context) => LoadingPageDesktop(),
+      ),
     );
   }
 }

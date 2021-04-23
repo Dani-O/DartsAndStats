@@ -44,6 +44,7 @@ class VarianceInCmCircle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        padding: EdgeInsets.only(left: 5),
         width: containerWidth,
         height: 200,
         decoration: BoxDecoration(

@@ -30,7 +30,7 @@ class PerfomanceDesktop extends StatelessWidget {
                     height: 50,
                     child: PerfomanceTitle(
                         edgeInsets: EdgeInsets.only(left: 40, top: 25),
-                        fontsize: 25)),
+                        fontsize: 22)),
                 Expanded(
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,

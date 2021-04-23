@@ -99,14 +99,14 @@ class PerfomanceTabletPotrait extends StatelessWidget {
                         fontsize: 20)),
                 Spacer(flex: 1),
                 Expanded(
-                    flex: 6,
+                    flex: 8,
                     child: VarianceInCmCircle(
                         containerWidth: 160,
                         borderWidth: 3,
                         varianceValue: "3.2",
                         valueFontsize: 40,
-                        sizeboxHeight: 10,
-                        descriptionFontsize: 15)),
+                        sizeboxHeight: 5,
+                        descriptionFontsize: 12)),
                 Spacer(flex: 1),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
