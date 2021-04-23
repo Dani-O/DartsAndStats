@@ -54,7 +54,7 @@ void main() {
   }
   return runApp(
     DevicePreview(
-      enabled: kIsWeb ? true : true, //!kReleaseMode,
+      enabled: kIsWeb ? false : true, //!kReleaseMode,
       builder: (context) => MyApp(), // Wrap your app
     ),
   );
